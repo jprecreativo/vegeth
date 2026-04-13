@@ -9,6 +9,7 @@ contract VeganRestaurantTest is Test {
 
     function setUp() public {
         restaurant = new VeganRestaurant();
+        restaurant.initialize(address(this));
     }
 
     // 1. Check require: Plus code cannot be empty.

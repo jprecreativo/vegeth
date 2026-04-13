@@ -18,7 +18,7 @@ contract VeganRestaurant is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     // Mapping from the Open Location Code (Plus Code) to its details.
     mapping(string => Restaurant) public restaurants;
 
-    function initialize(address initialOwner) public initializer {
+    function initialize(address initialOwner) public virtual initializer {
         __Ownable_init(initialOwner);
         version = 1;
     }

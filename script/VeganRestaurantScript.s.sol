@@ -20,16 +20,16 @@ contract VeganRestaurantScript is Script {
         address msgSender = msg.sender;
 
         console.log("Message sender address:", msgSender);
-        
+
         // Encode the initialization data.
         bytes memory data = abi.encodeCall(VeganRestaurant.initialize, msgSender);
-        
+
         // Deploy the proxy, pointing it to v1 and initializing it.
         ERC1967Proxy proxy = new ERC1967Proxy(address(implementation), data);
-        
+
         // Cast the proxy address to the v1 interface so we can interact with it.
         VeganRestaurant restaurantProxy = VeganRestaurant(address(proxy));
-        
+
         console.log("Proxy deployed at:", address(proxy));
 
         restaurantProxy.addRestaurant("344FWHMC+24F");
